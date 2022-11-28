@@ -1,3 +1,14 @@
+#' Find pairs of points within fixed cutoff
+#'
+#' @param pts A list of coordinate vectors (of any dimension).
+#' @param r The cutoff distance criteria between points (<=r).
+#'
+#' @return A list of length 2 vectors.
+#' @export
+#'
+#' @examples
+#' pts <- list(c(1,1), c(2,1), c(2,2), c(1,2))
+#' pairs <- dsearchR(pts, 1.1)
 dsearchR <- function(pts, r) {
   npts = length(pts)
   nprs = 0
