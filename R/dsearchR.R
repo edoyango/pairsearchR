@@ -1,4 +1,4 @@
-dsearch_pairsR <- function(pts, r) {
+dsearchR <- function(pts, r) {
   npts = length(pts)
   nprs = 0
   prs = list()
