@@ -39,3 +39,9 @@ library(dsearchR)
 (cutoff <- 1.1)
 dsearchR(points, cutoff)
 ```
+
+A C++ implementation is available:
+```{r example2}
+dsearchRcpp(2, points, cutoff)
+```
+The difference in usage being that the number of spatial dimensions is required as the first argument.

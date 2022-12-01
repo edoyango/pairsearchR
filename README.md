@@ -54,3 +54,23 @@ dsearchR(points, cutoff)
 #> [[4]]
 #> [1] 3 4
 ```
+
+A C++ implementation is available:
+
+``` r
+dsearchRcpp(2, points, cutoff)
+#> [[1]]
+#> [1] 1 2
+#> 
+#> [[2]]
+#> [1] 1 4
+#> 
+#> [[3]]
+#> [1] 2 3
+#> 
+#> [[4]]
+#> [1] 3 4
+```
+
+The difference in usage being that the number of spatial dimensions is
+required as the first argument.

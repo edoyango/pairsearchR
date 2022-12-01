@@ -1,16 +1,20 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-// This is a simple example of exporting a C++ function to R. You can
-// source this function into an R session using the Rcpp::sourceCpp
-// function (or via the Source button on the editor toolbar). Learn
-// more about Rcpp at:
-//
-//   http://www.rcpp.org/
-//   http://adv-r.had.co.nz/Rcpp.html
-//   http://gallery.rcpp.org/
-//
-
+//' Find pairs of points within fixed cutoff
+//'
+//' @param dim The number of spatial dimensions
+//' @param pts A list of coordinate vectors (of length dim).
+//' @param r The cutoff distance criteria between points (<=r).
+//'
+//' @return A list of length 2 vectors.
+//' @export
+//'
+//' @examples
+//' pts <- list(c(1,1), c(2,1), c(2,2), c(1,2))
+//' pairs <- dsearchRcpp(2, pts, 1.1)
+//' @useDynLib dsearchR
+//' @importFrom Rcpp evalCpp sourceCpp
 // [[Rcpp::export]]
 List dsearchRcpp(int dim, List pts, double r) {
 
@@ -35,7 +39,7 @@ List dsearchRcpp(int dim, List pts, double r) {
       }
       if (rr<=cutoff2)
       {
-        prs.push_back(IntegerVector::create(i,j));
+        prs.push_back(IntegerVector::create(i+1,j+1));
       }
     }
   }
